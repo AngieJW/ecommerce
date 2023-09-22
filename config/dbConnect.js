@@ -2,7 +2,7 @@ const { default: mongoose } = require("mongoose");
 
 const dbConnect = () => {
   try {
-    const conn= mongoose.connect("mongodb://localhost:27017/ecommerce")
+    const conn= mongoose.connect(process.env.MONGO_URI);
     console.log('database connected');
   }
   catch (error) {
